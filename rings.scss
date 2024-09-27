@@ -1,0 +1,61 @@
+$first-color: blue;
+$second-color: red;
+$third-color: yellow;
+$fourth-color: green;
+$fifth-color: orange;
+$sixth-color: purple;
+$colors: $first-color, $second-color, $third-color, $fourth-color, $fifth-color,
+  $sixth-color;
+
+h1 {
+  color: $first-color;
+  &:hover {
+    color: $second-color;
+  }
+  text-align: center;
+}
+
+.ring-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: black;
+}
+
+// mixin pour différents éléments de la div, je gard le border-radius à 100% par défaut
+// on doit compléter ici donc 4 propriétés : w, h, b-s, b-c (width, height, border-size, border-color)
+@mixin myRings(
+  $w,
+  $h,
+  $b-s,
+  $border-c,
+  $b-r: 100%,
+  $b-c: transparent,
+  $m-l: -20px,
+  $b-t: solid
+) {
+  width: $w + px; // à compléter
+  height: $h + px; // à compléter
+  border-radius: $b-r; // par défaut
+  background-color: $b-c; // par défaut
+  margin-left: $m-l; // par défaut
+  border: $b-s + px $b-t $border-c; // b-t par défaut b-s b-color à compléter
+}
+
+// on fait une boucle pour créer 6 élément sur la base de one-ring
+@for $i from 1 through 6 {
+  .one-ring-#{$i} {
+    // on multiplie l'index par 50 pour avoir des tailles différentes, on a la même valeur pour height et width par la suite. Je pars de 50 puis mulitplie par la valeur de l'index
+    $size: $i * 50;
+    // valeur de la taille de la bordure
+    $border-size: $i * 0.8 * 3;
+    // couleur correspondante dans la propréités colors à l'index de l'élément
+    $color: nth($colors, $i);
+    // on utiliserr le mixin, en lui donnant les 4 propriétés manquantes
+    @include myRings($size, $size, $border-size, $color);
+  }
+}

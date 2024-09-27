@@ -1,0 +1,72 @@
+h1 {
+  color: blue;
+  text-align: center;
+}
+h1:hover {
+  color: red;
+}
+
+.ring-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: black;
+}
+
+.one-ring-1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: transparent;
+  margin-left: -20px;
+  border: 2.4px solid blue;
+}
+
+.one-ring-2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: transparent;
+  margin-left: -20px;
+  border: 4.8px solid red;
+}
+
+.one-ring-3 {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: transparent;
+  margin-left: -20px;
+  border: 7.2px solid yellow;
+}
+
+.one-ring-4 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: transparent;
+  margin-left: -20px;
+  border: 9.6px solid green;
+}
+
+.one-ring-5 {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  background-color: transparent;
+  margin-left: -20px;
+  border: 12px solid orange;
+}
+
+.one-ring-6 {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color: transparent;
+  margin-left: -20px;
+  border: 14.4px solid purple;
+}/*# sourceMappingURL=rings.css.map */
